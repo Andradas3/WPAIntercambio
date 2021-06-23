@@ -1,6 +1,6 @@
 <?php
 
-function intercambios_registrando_taxonomia()
+function alura_intercambios_registrando_taxonomia()
 {
     register_taxonomy(
         'paises',
@@ -12,9 +12,9 @@ function intercambios_registrando_taxonomia()
     );
 }
 
-add_action('init', 'intercambios_registrando_taxonomia');
+add_action('init', 'alura_intercambios_registrando_taxonomia');
 
-function intercambios_registrando_post_customizado()
+function alura_intercambios_registrando_post_customizado()
 {
     register_post_type('destinos',
         array(
@@ -27,17 +27,17 @@ function intercambios_registrando_post_customizado()
     );
 }
 
-add_action('init', 'intercambios_registrando_post_customizado');
+add_action('init', 'alura_intercambios_registrando_post_customizado');
 
-function intercambios_adicionando_recursos_ao_tema()
+function alura_intercambios_adicionando_recursos_ao_tema()
 {
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
 }
 
-add_action('after_setup_theme', 'intercambios_adicionando_recursos_ao_tema');
+add_action('after_setup_theme', 'alura_intercambios_adicionando_recursos_ao_tema');
 
-function intercambios_registrando_menu()
+function alura_intercambios_registrando_menu()
 {
     register_nav_menu(
         'menu-navegacao',
@@ -45,9 +45,9 @@ function intercambios_registrando_menu()
     );
 }
 
-add_action('init', 'intercambios_registrando_menu');
+add_action('init', 'alura_intercambios_registrando_menu');
 
-function intercambios_registrando_post_customizado_banner()
+function alura_intercambios_registrando_post_customizado_banner()
 {
     register_post_type(
         'banners',
@@ -61,9 +61,9 @@ function intercambios_registrando_post_customizado_banner()
     );
 }
 
-add_action('init', 'intercambios_registrando_post_customizado_banner');
+add_action('init', 'alura_intercambios_registrando_post_customizado_banner');
 
-function intercambios_registrando_metabox()
+function alura_intercambios_registrando_metabox()
 {
     add_meta_box(
         'ai_registrando_metabox',
@@ -73,7 +73,7 @@ function intercambios_registrando_metabox()
     );
 }
 
-add_action('add_meta_boxes', 'intercambios_registrando_metabox');
+add_action('add_meta_boxes', 'alura_intercambios_registrando_metabox');
 
 function ai_funcao_callback($post)
 {
@@ -90,7 +90,7 @@ function ai_funcao_callback($post)
     <?php
 }
 
-function intercambios_salvando_dados_metabox($post_id)
+function alura_intercambios_salvando_dados_metabox($post_id)
 {
     foreach ($_POST as $key => $value) {
         if ($key !== 'texto_home_1' && $key !== 'texto_home_2') {
@@ -105,7 +105,7 @@ function intercambios_salvando_dados_metabox($post_id)
     }
 }
 
-add_action('save_post', 'intercambios_salvando_dados_metabox');
+add_action('save_post', 'alura_intercambios_salvando_dados_metabox');
 
 function pegandoTextosParaBanner()
 {
@@ -129,7 +129,7 @@ function pegandoTextosParaBanner()
     endif;
 }
 
-function intercambios_adicionando_scripts()
+function alura_intercambios_adicionando_scripts()
 {
 
     $textosBanner = pegandoTextosParaBanner();
@@ -141,4 +141,4 @@ function intercambios_adicionando_scripts()
     }
 }
 
-add_action('wp_enqueue_scripts', 'intercambios_adicionando_scripts');
+add_action('wp_enqueue_scripts', 'alura_intercambios_adicionando_scripts');

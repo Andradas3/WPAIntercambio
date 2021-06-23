@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 <header class="site-header">
-    <div class="container">
+    <div class="container-alura">
         <?php
         the_custom_logo();
         ?>
